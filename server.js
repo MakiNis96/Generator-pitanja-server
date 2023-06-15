@@ -31,8 +31,13 @@ https
     },
     server
   )
-  .listen(backPort, backHost, () => {
+  // .listen(backPort, backHost, () => {
+  //   console.log(
+  //     `Server started at https://${backHost}:${backPort}/`
+  //   );
+  // });
+  .listen(backPort, () => {
     console.log(
-      `Server started at https://${backHost}:${backPort}/`
+      `Server started at ${backPort}`
     );
   });
