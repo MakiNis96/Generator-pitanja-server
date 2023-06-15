@@ -1,5 +1,6 @@
 import jsonServer from 'json-server';
-import https from 'https';
+// import https from 'https';
+import http from 'http'
 import fs from 'fs';
 import { config } from "./config.js"
 const { backHost, backPort, keyFile } = config
@@ -23,12 +24,12 @@ server.get('/odgovori', (req, res) => {
 
 server.use(router)
 
-https
+http
   .createServer(
-    {
-      key: fs.readFileSync(keyFile || 'privkey.pem'),
-      cert: fs.readFileSync('cert.pem'),
-    },
+    // {
+    //   key: fs.readFileSync(keyFile || 'privkey.pem'),
+    //   cert: fs.readFileSync('cert.pem'),
+    // },
     server
   )
   // .listen(backPort, backHost, () => {
